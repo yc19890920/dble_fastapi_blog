@@ -41,7 +41,7 @@ DB_HOST = config('DB_HOST', default='192.168.1.24')
 DB_PORT = config('DB_PORT', default=3306, cast=int)
 DB_USER = config('DB_USER', default='root')
 DB_PASSWORD = config('DB_PASSWORD', default='123456')
-DB_NAME = config('DB_NAME', default='dbo_track')
+DB_NAME = config('DB_NAME', default='blog')
 DB_ECHO = config('DB_ECHO', default=False, cast=bool)
 
 TORTOISE_ORM = {
