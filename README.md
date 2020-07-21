@@ -2,7 +2,7 @@
 1. Mysql (DBLE) 
 2. Tortoise-ORM (asyncio orm)
 3. Redis (aioredis)
-4. migration and migrate
+4. alembic ( migration and migrate )
 5. create superuser
 
 ## create database
