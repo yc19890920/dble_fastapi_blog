@@ -1,9 +1,9 @@
-# Full Stack FastAPI 
+# Full Stack FastAPI
 1. Mysql (DBLE) 
 2. Tortoise-ORM (asyncio orm)
-3. Redis
+3. Redis (aioredis)
 4. migration and migrate
-5. createsuperuser
+5. create superuser
 
 ## create database
 `CREATE DATABASE IF NOT EXISTS blog DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;`
