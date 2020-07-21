@@ -84,10 +84,7 @@ async def tag_list(index: int = Query(1, ge=1, description="page，default 1"),
     description="Category create",
     response_description="Category Instance")
 async def category_create(data: CategoryCreateRequest):
-    async with in_transaction(connection_name=Category.get_connection_name()):
-        if await Category.filter(name=data.name).exists():
-            raise ClientError.BadRequest400("Category name exist")
-        instance = await Category.create(**data.dict(exclude_unset=True))
+    instance = await Category.create(**data.dict(exclude_unset=True))
     return await CategoryCreateResponse.from_tortoise_orm(instance)
 
 
@@ -166,7 +163,7 @@ async def article_create(data: ArticleCreateRequest):
         **ClientError.NotFound404('Article not Found').response,
     })
 async def article_update(pk, data: ArticleCreateRequest):
-    async with in_transaction(connection_name=Article.get_connection_name()):
+    async with in_transaction():
         if not await Category.filter(id=data.category_id).exists():
             raise ClientError.BadRequest400(f"category_id({data.category_id}) not exist")
         for tag_id in data.tags:
