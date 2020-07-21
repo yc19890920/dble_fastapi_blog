@@ -2,17 +2,17 @@
 
 
 ## makemigrations
-`./run.sh makemigrations`
+`./entrypoint.sh makemigrations`
 
 
 ## migrate
-`./run.sh migrate`
+`./entrypoint.sh migrate`
 
 
 ## createsuperuser
-`./run.sh createsuperuser`
+`./entrypoint.sh createsuperuser`
 
 
 ## web run
-`./run.sh`
+`./entrypoint.sh`
 
