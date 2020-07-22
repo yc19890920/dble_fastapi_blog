@@ -12,6 +12,7 @@ from passlib.hash import md5_crypt
 
 
 class User(Model):
+    id = fields.BigIntField(pk=True)
     username = fields.CharField(max_length=150, null=False, unique=True, description="用户名")
     password = fields.CharField(max_length=128, null=False, description="密码")
     email = fields.CharField(max_length=254, null=True, description="邮箱")

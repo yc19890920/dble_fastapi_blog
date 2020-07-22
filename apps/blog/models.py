@@ -10,6 +10,7 @@ from lib.tortoise.models import Model
 
 
 class Tag(Model):
+    id = fields.BigIntField(pk=True)
     name = fields.CharField(max_length=100, unique=True, description="名称")
     created = fields.DatetimeField(auto_now_add=True, description="创建时间")
     updated = fields.DatetimeField(auto_now=True, description="更新时间")
@@ -20,16 +21,18 @@ class Tag(Model):
 
 
 class Category(Model):
+    id = fields.BigIntField(pk=True)
     name = fields.CharField(max_length=100, unique=True, description="名称")
     created = fields.DatetimeField(auto_now_add=True, description="创建时间")
     updated = fields.DatetimeField(auto_now=True, description="更新时间")
 
     class Meta:
         table = 'blog_category'
-        table_description = '标签'
+        table_description = '分类'
 
 
 class Article(Model):
+    id = fields.BigIntField(pk=True)
     title = fields.CharField(max_length=100, index=True, description="主题")
     content = fields.TextField(null=True, description="内容")
     abstract = fields.TextField(null=True, description="摘要")
@@ -45,4 +48,4 @@ class Article(Model):
 
     class Meta:
         table = 'blog_article'
-        table_description = '标签'
+        table_description = '文章'

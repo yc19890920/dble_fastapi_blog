@@ -37,7 +37,7 @@
 
     <tableRule name="rule_common_hash2">
         <rule>
-            <columns>blog_article_id</columns>
+            <columns>id2</columns>
             <algorithm>func_common_hash</algorithm>
         </rule>
     </tableRule>
@@ -101,8 +101,8 @@
     <!-- Hash partition,when partitionLength=1, it is a mod partition-->
     <!--MAX(sum(count*length[i]) must not more then 2880-->
     <function name="func_common_hash" class="Hash">
-        <property name="partitionCount">6</property>
-        <property name="partitionLength">1</property>
+        <property name="partitionCount">2</property>
+        <property name="partitionLength">512</property>
     </function>
     <!-- Hash partition,when partitionLength=1, it is a mod partition-->
     <!--MAX(sum(count*length[i]) must not more then 2880-->
@@ -141,8 +141,7 @@
     <function name="func_date" class="Date">
         <property name="dateFormat">yyyy-MM-dd</property>
         <property name="sBeginDate">2015-01-01</property>
-        <property name="sEndDate">2015-01-31
-        </property> <!--if not set sEndDate,then in fact ,the sEndDate = sBeginDate+ (node size)*sPartionDay-1 -->
+        <property name="sEndDate">2015-01-31 </property> <!--if not set sEndDate,then in fact ,the sEndDate = sBeginDate+ (node size)*sPartionDay-1 -->
         <property name="sPartionDay">10</property>
         <property name="defaultNode">0</property><!--the default is -1-->
     </function>
