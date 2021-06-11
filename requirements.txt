@@ -48,7 +48,7 @@ typing-extensions==3.7.4.2
 ujson==3.0.0
 uvicorn==0.11.5
 uvloop==0.14.0
-websockets==8.1
+websockets==9.1
 xmltodict==0.12.0
 yarl==1.4.2
 ciso8601==2.1.3
